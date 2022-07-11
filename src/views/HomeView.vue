@@ -1,82 +1,34 @@
 <template>
   <section>
-    <div class="container">
+    <div class="container py-5 text-black">
       <!--image and first paragraphs-->
-      <div class="ratio ratio-11x9 mb-5">
-        <img class="object-fit-cover" alt="the 5 steps to buy a car on leasing"
-             src="../assets/images/5-steps-for-leasing.jpg">
-      </div>
-      <div class="text-start">
-        <section>
-          <description v-for="decs in descriptionParagraph" :desc="decs"></description>
-        </section>
-        <!--Steps for buying on leasing-->
-        <section>
-          <h1>
-            <strong>Чекори за купување возило на лизинг:</strong>
-          </h1>
-          <ol>
-            <steps-for-buying-car v-for="step in stepsForLeasing" :steps="step"/>
-          </ol>
-          <p><strong class="ps-4">НАПОМЕНА: Пред превземање на возилото потребно е да обезбедите КАСКО ПОЛИСА.</strong></p>
-        </section>
-        <!--Documentation for natural person-->
-        <section>
-          <h1><strong>Документација со барање за лизинг: ФИЗИЧКИ ЛИЦА</strong></h1>
-          <p>Со пополнето барање за одобрување на лизинг, <strong>профактура на добавувачот</strong> и <strong>прифатена
-            лизинг понуда</strong>, потребно е да се приложат и:</p>
-          <ul>
-            <li>ПРОФАКТУРА</li>
-            <li>БАРАЊЕ за одобрување на лизинг (<a href="https://s-leasing.mk/content/%D0%91%D0%B0%D1%80%D0%B0%D1%9A%D0%B5%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%BD%D0%B0%20%D0%BB%D0%B8%D0%B7%D0%B8%D0%BD%D0%B3-Fizicki%20Lica.pdf">превземи барање</a>)
-            </li>
-            <li>Копија од ЛИЧНА КАРТА</li>
-            <li>ПОТВРДА од работодавецот за редовен работен однос</li>
-            <li>Административна забрана од плата од работодавецот (<a
-                href="https://s-leasing.mk/content/%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D0%B4%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BE%D0%B4%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BE%D0%B4%D0%B0%D0%B2%D0%B5%D1%86%D0%BE%D1%82%20%D0%B2%D0%BE%20%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%20%D0%BD%D0%B0%20%D0%A8%D0%9F%D0%90%D0%A0%D0%9A%D0%90%D0%A1%D0%95%20%D0%9B%D0%98%D0%97%D0%98%D0%9D%D0%93%20%D0%94%D0%9E%D0%9E%20%D0%A1%D0%BA%D0%BE%D0%BF%D1%98%D0%B5.pdf">превземи Административна забрана</a>)
-            </li>
-            <li>ИЗЈАВА за редовна отплата (<a
-                href="https://s-leasing.mk/content/%D0%98%D0%B7%D1%98%D0%B0%D0%B2%D0%B0%20%D0%B7%D0%B0%20%D1%80%D0%B5%D0%B4%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BF%D0%BB%D0%B0%D1%82%D0%B0.pdf">превземи Изјава</a>)
-            </li>
-            <li>Годишна даночна пријава (доколку барателот остварува дополнителни приходи)</li>
-            <li>Декларации за прием за бруто плата за последните 3 месеци</li>
-            <li>СОГЛАСНОСТ за извадок од Македонско Кредитно Биро (<a
-                href="https://s-leasing.mk/content/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%20%D0%B7%D0%B0%20%D0%B8%D0%B7%D0%B2%D0%B0%D0%B4%D0%BE%D0%BA%20%D0%BE%D0%B4%20%D0%9C%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%20%D0%91%D0%B8%D1%80%D0%BE.pdf">превземи согласност</a>)
-            </li>
-          </ul>
-          <p><strong>Документација треба да биде заверена со потпис и печат на овластеното лице!</strong></p>
-          <p><strong>AUTOWELT</strong> го задржува правото да побара дополнителна документација за разгледување на
-            барањата за одобрување на лизинг</p>
-          <hr>
-        </section>
-        <!--Documentation for LEGAL ENTITIES-->
-        <section>
-          <h1><strong>Документација со барање за лизинг: ПРАВНИ ЛИЦА</strong></h1>
-          <p>Со пополнето барање за одобрување на лизинг, профактура на добавувачот и прифатена лизинг понуда, потребно
-            е да се приложат и:</p>
-          <ul>
-            <li>Барање за одобрување на лизинг (<a href="https://s-leasing.mk/content/%D0%91%D0%B0%D1%80%D0%B0%D1%9A%D0%B5%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%BD%D0%B0%20%D0%BB%D0%B8%D0%B7%D0%B8%D0%BD%D0%B3_Pravni%20Lica-11.01.2022.pdf">превземи барање</a>)</li>
-            <li>Копија од тековна состојба, не постара од 6 недели</li>
-            <li>Завршна сметка (биланс на состојба и биланс на успех за последните две фискални години)</li>
-            <li>Аналитички заклучни листови кон завршните сметки за последните две години</li>
-            <li>Аналитички заклучен лист за тековната година со последен датум на книжење</li>
-            <li>Согласност за извадок од Македонско Кредитно Биро (<a href="https://s-leasing.mk/content/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%20%D0%B7%D0%B0%20%D0%B8%D0%B7%D0%B2%D0%B0%D0%B4%D0%BE%D0%BA%20%D0%BE%D0%B4%20%D0%9C%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%20%D0%91%D0%B8%D1%80%D0%BE.pdf">превземи согласност</a>)</li>
-            <li>Изјава за вистински сопственик (<a href="https://s-leasing.mk/content/Izjava-za-vistinski-sopstvenik.pdf">превземи согласност</a>)</li>
-          </ul>
-          <p>Документација треба да биде заверена со потпис и печат на овластеното лице!</p>
-          <p><strong>AUTOWELT</strong> го задржува правото да побара дополнителна документација за разгледување на
-            барањата за одобрување на лизинг.
-          </p>
-          <hr>
-        </section>
-        <!--WARNING-->
-        <section class="text-danger">
-          <p>
-            <i>* НАПОМЕНА: ДОКОЛКУ ПОДАТОЦИТЕ КОИ ГИ ОСТАВАТЕ ПРИ ПРЕД-ОДОБРУВАЊЕТО НЕ СЕ ТОЧНИ И ПРЕЦИЗНИ МОЖНО Е
-            АПЛИКАЦИЈАТА ЗА ЛИЗИНГ ДА ВИ БИДЕ ОДБИЕНА ИЛИ ПРОЛОНГИРАНА ОД СТРАНА НА БАНКАТА И ПРИТОА ГО ГУБИТЕ ОСТАВЕНИОТ КАПАР.
-            </i>
-          </p>
-        </section>
-      </div>
+      <description/>
+      <!--Steps for buying on leasing-->
+      <section class="text-start">
+        <h1>
+          <strong>Чекори за купување возило на лизинг:</strong>
+        </h1>
+        <ol>
+          <steps-for-buying-car v-for="step in stepsForLeasing" :steps="step"/>
+        </ol>
+        <p>
+          <strong class="ps-4">НАПОМЕНА: Пред превземање на возилото потребно е да обезбедите КАСКО ПОЛИСА.</strong>
+        </p>
+      </section>
+      <!--Documentation for natural person-->
+      <section>
+        <documentation-for-natural-person :descForNaturalPerson="descForNatural"/>
+      </section>
+      <!--Documentation for LEGAL ENTITIES-->
+      <section>
+        <documentation-for-legal-entities :descForLegalEntities="descForLegal"/>
+      </section>
+      <!--WARNING-->
+      <section class="text-danger text-start">
+        <p>
+          <i>* НАПОМЕНА: ДОКОЛКУ ПОДАТОЦИТЕ КОИ ГИ ОСТАВАТЕ ПРИ ПРЕД-ОДОБРУВАЊЕТО НЕ СЕ ТОЧНИ И ПРЕЦИЗНИ МОЖНО Е АПЛИКАЦИЈАТА ЗА ЛИЗИНГ ДА ВИ БИДЕ ОДБИЕНА ИЛИ ПРОЛОНГИРАНА ОД СТРАНА НА БАНКАТА И ПРИТОА ГО ГУБИТЕ ОСТАВЕНИОТ КАПАР.</i>
+        </p>
+      </section>
     </div>
   </section>
 </template>
@@ -86,23 +38,47 @@
 // @ is an alias to /src
 import StepsForBuyingCar from "@/components/StepsForBuyingCar";
 import Description from "@/components/Description";
+import DocumentationForNaturalPerson from "@/components/DocumentationForNaturalPerson";
+import DocumentationForLegalEntities from "@/components/DocumentationForLegalEntities";
 
 export default {
   name: 'HomeView',
   components: {
+    StepsForBuyingCar,
     Description,
-    StepsForBuyingCar
+    DocumentationForNaturalPerson,
+    DocumentationForLegalEntities
   },
   data() {
     return {
-      descriptionParagraph:[
-      {
-        descriptionInParagraph:'Доколку сакате да купите возило на лизинг Ве молиме детално прегледајте ги податоците на оваа страна. Подолу имате калкулатор со кој можете орентационо да ги пресметате ратите за лизингот. Плаќањето можете да го прилагодите според вашите можности и потреби. На пример можете да си одредите фиксен дел за Учество кој ќе го платите, а останата сума да ја плаќате на онолку рати колку што Ви одговара.'
+      descForNatural: {
+        heading1: '<h1><strong>Документација со барање за лизинг: ФИЗИЧКИ ЛИЦА</strong></h1>',
+        paragraph1: '<p>Со пополнето барање за одобрување на лизинг, <strong>профактура на добавувачот</strong> и <strong>прифатена лизинг понуда</strong>, потребно е да се приложат и:</p>',
+        li1: 'ПРОФАКТУРА',
+        li2: '<li>БАРАЊЕ за одобрување на лизинг (<strong><a href="https://s-leasing.mk/content/%D0%91%D0%B0%D1%80%D0%B0%D1%9A%D0%B5%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%BD%D0%B0%20%D0%BB%D0%B8%D0%B7%D0%B8%D0%BD%D0%B3-Fizicki%20Lica.pdf">превземи барање</a></strong>)</li>',
+        li3: 'Копија од ЛИЧНА КАРТА',
+        li4: 'ПОТВРДА од работодавецот за редовен работен однос',
+        li5: '<li>Административна забрана од плата од работодавецот (<strong><a href="https://s-leasing.mk/content/%D0%90%D0%B4%D0%BC%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%B0%20%D0%B7%D0%B0%D0%B1%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D0%B4%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BE%D0%B4%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BE%D0%B4%D0%B0%D0%B2%D0%B5%D1%86%D0%BE%D1%82%20%D0%B2%D0%BE%20%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%20%D0%BD%D0%B0%20%D0%A8%D0%9F%D0%90%D0%A0%D0%9A%D0%90%D0%A1%D0%95%20%D0%9B%D0%98%D0%97%D0%98%D0%9D%D0%93%20%D0%94%D0%9E%D0%9E%20%D0%A1%D0%BA%D0%BE%D0%BF%D1%98%D0%B5.pdf">превземи Административна забрана</a></strong>)</li>',
+        li6: '<li>ИЗЈАВА за редовна отплата (<strong><a href="https://s-leasing.mk/content/%D0%98%D0%B7%D1%98%D0%B0%D0%B2%D0%B0%20%D0%B7%D0%B0%20%D1%80%D0%B5%D0%B4%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%BE%D1%82%D0%BF%D0%BB%D0%B0%D1%82%D0%B0.pdf">превземи Изјава</a></strong>)</li>',
+        li7: 'Годишна даночна пријава (доколку барателот остварува дополнителни приходи)',
+        li8: 'Декларации за прием за бруто плата за последните 3 месеци',
+        li9: '<li>СОГЛАСНОСТ за извадок од Македонско Кредитно Биро (<strong><a href="https://s-leasing.mk/content/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%20%D0%B7%D0%B0%20%D0%B8%D0%B7%D0%B2%D0%B0%D0%B4%D0%BE%D0%BA%20%D0%BE%D0%B4%20%D0%9C%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%20%D0%91%D0%B8%D1%80%D0%BE.pdf">превземи согласност</a></strong>)</li>',
+        paragraph2: '<p><strong>Документација треба да биде заверена со потпис и печат на овластеното лице!</strong></p>',
+        paragraph3: '<p><strong>AUTOWELT</strong> го задржува правото да побара дополнителна документација за разгледување на барањата за одобрување на лизинг</p>',
       },
-      {
-        descriptionInParagraph:'        НАПОМЕНА: дел од трошоците за процедурата зa лизинг се фиксни и се плаќаат на лизинг компанијата. Корисникот на лизинг е обврзан да го осигура возилото со целосно КАСКО осигурување за целото времетраење на лизингот, вклучувајќи и додаток во случај на кражба и проневера.'
-      }
-    ],
+      descForLegal: {
+        heading1: 'Документација со барање за лизинг: ПРАВНИ ЛИЦА',
+        paragraph1: 'Со пополнето барање за одобрување на лизинг, профактура на добавувачот и прифатена лизинг понуда, потребно е да се приложат и:',
+        li1: '<li>Барање за одобрување на лизинг (<strong><a target="_blank" href="https://s-leasing.mk/content/%D0%91%D0%B0%D1%80%D0%B0%D1%9A%D0%B5%20%D0%B7%D0%B0%20%D0%BE%D0%B4%D0%BE%D0%B1%D1%80%D1%83%D0%B2%D0%B0%D1%9A%D0%B5%20%D0%BD%D0%B0%20%D0%BB%D0%B8%D0%B7%D0%B8%D0%BD%D0%B3_Pravni%20Lica-11.01.2022.pdf">превземи барање</a></strong>)</li>',
+        li2: 'Копија од тековна состојба, не постара од 6 недели',
+        li3: 'Завршна сметка (биланс на состојба и биланс на успех за последните две фискални години)',
+        li4: 'Аналитички заклучни листови кон завршните сметки за последните две години',
+        li5: 'Аналитички заклучен лист за тековната година со последен датум на книжење',
+        li6: '<li>Согласност за извадок од Македонско Кредитно Биро (<strong><a target="_blank" href="https://s-leasing.mk/content/%D0%A1%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%20%D0%B7%D0%B0%20%D0%B8%D0%B7%D0%B2%D0%B0%D0%B4%D0%BE%D0%BA%20%D0%BE%D0%B4%20%D0%9C%D0%B0%D0%BA%D0%B5%D0%B4%D0%BE%D0%BD%D1%81%D0%BA%D0%BE%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%20%D0%91%D0%B8%D1%80%D0%BE.pdf">превземи согласност</a></strong>)</li>',
+        li7: '<li>Изјава за вистински сопственик (<strong><a target="_blank" href="https://s-leasing.mk/content/Izjava-za-vistinski-sopstvenik.pdf">превземи согласност</a></strong>)</li>',
+        paragraph2: 'Документација треба да биде заверена со потпис и печат на овластеното лице!',
+        paragraph3: '<p><strong>AUTOWELT</strong> го задржува правото да побара дополнителна документација за разгледување на барањата за одобрување на лизинг.</p>'
+      },
       stepsForLeasing: [
         {
           stepName: 'ИЗБЕРЕТЕ ГО ВОЗИЛОТО',
